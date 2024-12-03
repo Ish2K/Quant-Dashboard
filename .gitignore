@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+lightning_logs/
+
+secrets.toml
+
 # C extensions
 *.so
 

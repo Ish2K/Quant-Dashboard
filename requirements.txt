@@ -1,0 +1,5 @@
+streamlit
+neuralprophet
+Riskfolio-Lib
+QuantStats
+yfinance
