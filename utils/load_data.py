@@ -18,5 +18,8 @@ def load_stocks_data(tickers: list, start: str, end: str) -> pd.DataFrame:
         except:
             temp_df = pd.DataFrame()
         df = pd.concat([df, temp_df], axis=1)
-
+    
+    # remove columns with missing data
+    df.dropna(axis=1, inplace=True)
+    
     return df

@@ -36,6 +36,7 @@ class MetricsCalculator(PortfolioOptimizer):
         cumulative_returns = np.cumprod(1 + returns) - 1
         running_max = np.maximum.accumulate(cumulative_returns)
         drawdown = cumulative_returns - running_max
+        print(drawdown)
         max_drawdown = np.min(drawdown) * 100
 
         ## Fix this calculation

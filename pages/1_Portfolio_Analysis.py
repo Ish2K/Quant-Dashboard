@@ -102,12 +102,14 @@ def main():
                     stock.replace("", "")
                     for stock in optimizer.optimized_allocation.index
                 ]
+                missing_tickers = False
                 ret, std = optimizer.basicMetrics()
                 if not (len(ret.columns) == len(stocks_list)):
                     missing_tickers = set(stocks_list) - set(ret.columns)
-                    raise ValueError(
-                        f"Data for the following tickers could not be retrieved: {', '.join(missing_tickers)}"
-                    )
+                    missing_tickers = [str(ticker) for ticker in missing_tickers]
+                    # raise ValueError(
+                    #     f"Data for the following tickers could not be retrieved: {', '.join(missing_tickers)}"
+                    # )
 
                 optimizer.optimized_allocation.columns = ["Allocation (%)"]
                 optimizer.optimized_allocation["Allocation (%)"] = [
@@ -134,14 +136,19 @@ def main():
                     optimization_criterion,
                     riskFreeRate,
                 )
-
-        except ValueError as e:
-            print(str(e))
-            st.error("Unable to download data for one or more tickers!")
-            return
         except Exception as e:
-            st.error(str(e))
-            return
+            raise ValueError(str(e))
+        
+        if missing_tickers:
+            st.info(f"Data for the following tickers could not be retrieved: {', '.join(missing_tickers)}")
+
+        # except ValueError as e:
+        #     print(str(e))
+        #     st.error("Unable to download data for one or more tickers!")
+        #     return
+        # except Exception as e:
+        #     st.error(str(e))
+        #     return
 
         with st.container(border=True):
             tab1, tab2, tab3, tab4, tab5 = st.tabs(
