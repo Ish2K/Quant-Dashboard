@@ -7,7 +7,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 from scipy.stats import norm
-
+from .load_data import *
 
 class PortfolioOptimizer:
 
@@ -33,14 +33,11 @@ class PortfolioOptimizer:
             raise ValueError("Enter ticker names in Capital Letters!")
         if len(self.stocks) <= 1:
             raise ValueError("More than 1 ticker input required!")
-        try:
-            stockData = yf.download(self.stocks, start=self.start, end=self.end)
-        except:
-            raise ValueError("Unable to download data, try again later!")
-        stockData = stockData["Close"]
+        stockData = load_stocks_data(self.stocks, self.start, self.end)
 
         if len(stockData.columns) != len(self.stocks):
-            raise ValueError("Unable to download data for one or more tickers!")
+            print("Data for the following tickers could not be retrieved:")
+            print(set(self.stocks) - set(stockData.columns))
 
         returns = stockData.pct_change()
         stdIndividual = returns.std()
@@ -55,10 +52,7 @@ class PortfolioOptimizer:
         return portfolioDailyReturns
 
     def benchmarkReturns(self):
-        try:
-            benchmark_data = yf.download("^GSPC", self.start, self.end)
-        except:
-            raise ValueError("Unable to download data, try again later!")
+        benchmark_data = load_stock_data("^GSPC", self.start, self.end)
         benchmark_returns = benchmark_data["Close"].pct_change().dropna()
         return benchmark_returns
 
