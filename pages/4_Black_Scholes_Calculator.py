@@ -119,11 +119,8 @@ def greek_visualisation(r, spot, strike, T, sigma, type, greek):
 
 def fetch_spy():
     spy_latest = yf.download('^GSPC', interval = '1m', period = '1d')
-    print(spy_latest.Close.values[-1])
     spy_latest = round(spy_latest.Close.values[-1][0], 1)
     return spy_latest
-    
-
 
 def main():
     base = "light"
