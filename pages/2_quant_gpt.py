@@ -1,9 +1,17 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("ChatGPT-like clone")
+st.title("Quantitative GPT-3 Chatbot")
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+# sidebar input for the OpenAI API key
+api_key = st.sidebar.text_input("OpenAI API key", type="password")
+
+# add submit button
+
+if (not (st.sidebar.button("Submit") or api_key)):
+    st.stop()
+
+client = OpenAI(api_key=api_key)
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
