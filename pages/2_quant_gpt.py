@@ -51,7 +51,9 @@ with st.expander("GPT Bot Guide"):
         ---
 
         ## Step 5: Use the API Key
-        - Use your API key in your application to enable the chatbot.
+        - Input the text of your API key in the text box provided on the left sidebar.
+
+            > **Note:** The API key is sensitive information. Although, I do not store or log your API key but regenerating a new key after use is recommended.
 
         ---
 
