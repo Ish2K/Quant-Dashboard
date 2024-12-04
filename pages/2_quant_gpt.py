@@ -6,6 +6,18 @@ st.title("Quantitative GPT-3 Chatbot")
 # sidebar input for the OpenAI API key
 api_key = st.sidebar.text_input("OpenAI API key", type="password")
 
+#
+
+with st.expander("GPT Bot Disclaimer"):
+    st.markdown(
+        '''
+        ## GPT-3.5-turbo
+        This chatbot is powered by OpenAI's GPT-3.5-turbo model. It is still in development and may not be perfect. Please provide feedback if you encounter any issues.
+        It is yet to be fine tuned for quantitative finance questions. After which I will remove the 'API key' requirement.
+        '''
+    )
+
+
 # add submit button
 
 if (not (st.sidebar.button("Submit") or api_key)):
