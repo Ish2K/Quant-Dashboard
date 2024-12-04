@@ -84,4 +84,4 @@ def optimization_strategies_info():
     st.markdown("**Tracking Error**: This metric measures how closely a portfolio's returns follow its benchmark. It’s suitable for investors who want to ensure their portfolio closely aligns with a benchmark index. A lower Tracking Error indicates consistency with benchmark performance.")
     st.markdown("**Information Ratio**: This ratio evaluates returns above a benchmark relative to the active risk taken. It’s ideal for active investors who seek to outperform a benchmark while managing risk. A higher Information Ratio indicates successful active management.")
     st.markdown("**Conditional Value-at-Risk (CVaR)**: This metric estimates potential losses in extreme market conditions, focusing on worst-case scenarios. It's essential for risk-averse investors looking to safeguard their capital against severe downturns. Lower CVaR values indicate better risk protection.")
-    st.markdown("*Benchmark: NIFTY50*")
+    st.markdown("*Benchmark: SP500*")
