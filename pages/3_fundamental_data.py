@@ -21,6 +21,9 @@ mpl.rcParams['font.family'] = 'serif'
 np.set_printoptions(precision=5, suppress=True,formatter={'float': lambda x: f'{x:6.3f}'})
 import yfinance as yf
 
+from utils.interpretations import fundamentals_info
+from utils.fundamentals import Fundamentals
+
 
 @st.cache_data
 def load_data(ticker: str):
@@ -34,19 +37,26 @@ stocks = df['Symbol'].values.tolist()
 
 st.subheader("Fundamental Data:")
 
-options = st.multiselect("Select Stocks For Portfolio", stocks)
+with st.expander("View Fundamental Data Info"):
+    fundamentals_info()
+
+cont1 = st.container(border=True)
+cont1.markdown("### Fetch Fundamental Data")
+col1, col2 = cont1.columns(2)
+
+options = col1.multiselect("Select Stocks For Portfolio", stocks)
 
 df = pd.read_csv('sample.csv')
 
-filter = st.radio("Filter Columns:", ("All","Custom"))
+filter = col2.radio("Filter Columns:", ("All","Custom"))
 df.set_index('symbol',inplace=True)
 
 if filter == "Custom":
-    columns = st.multiselect("Columns:",sorted(df.columns))
+    columns = cont1.multiselect("Columns:",sorted(df.columns))
 else:
     columns = df.columns
 
-if(st.button("Get Fundamental Data")):
+if(cont1.button("Get Fundamental Data")):
     
     infos = []
     for tick in options:
@@ -56,8 +66,28 @@ if(st.button("Get Fundamental Data")):
     infos = infos.set_index('symbol')
     st.write(infos[list(set(infos.columns) & set(columns))])
 
-
-st.info('''
+cont1.info('''
 Note: If your selected columns are not displayed, it is because the data is not available for the selected stock.
 '''
 )
+
+cont2 = st.container(border=True)
+cont2.markdown("### Fundamental Analysis")
+
+col3, col4 = cont2.columns(2)
+
+stocks_list = col3.multiselect("Select Stocks For Portfolio", stocks, key="fundamentals")
+
+analysis_type = col4.selectbox(
+    "Fundamentals Metrics",
+    options=[
+        "Piotroski Score",
+    ],
+)
+
+calc = cont2.button("Calculate")
+
+if calc:
+    fund = Fundamentals(stocks_list, analysis_type)
+    data = fund.start_analysis()
+    st.write(data)

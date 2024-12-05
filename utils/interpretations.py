@@ -85,3 +85,30 @@ def optimization_strategies_info():
     st.markdown("**Information Ratio**: This ratio evaluates returns above a benchmark relative to the active risk taken. It’s ideal for active investors who seek to outperform a benchmark while managing risk. A higher Information Ratio indicates successful active management.")
     st.markdown("**Conditional Value-at-Risk (CVaR)**: This metric estimates potential losses in extreme market conditions, focusing on worst-case scenarios. It's essential for risk-averse investors looking to safeguard their capital against severe downturns. Lower CVaR values indicate better risk protection.")
     st.markdown("*Benchmark: SP500*")
+
+def fundamentals_info():
+    st.write("")
+
+    st.markdown("##### Price to Earnings Ratio (P/E)")
+    st.markdown("**Interpretation**: P/E ratio indicates how much investors are willing to pay for each dollar of earnings. A high P/E ratio suggests that investors expect higher earnings growth in the future, while a low P/E ratio may indicate undervaluation.")
+    st.markdown("**Ideal Range**: The ideal P/E ratio varies by industry, but generally, lower values are preferred as they indicate undervaluation. However, it's essential to compare the P/E ratio with industry peers for a meaningful assessment.")
+
+    st.markdown("##### Price to Book Ratio (P/B)")
+    st.markdown("**Interpretation**: P/B ratio compares a company's market value to its book value, reflecting the market's valuation of the company's assets. A high P/B ratio indicates overvaluation, while a low P/B ratio suggests undervaluation.")
+    st.markdown("**Ideal Range**: The ideal P/B ratio varies by industry, but generally, lower values are preferred as they indicate undervaluation. However, it's essential to compare the P/B ratio with industry peers for a meaningful assessment.")
+
+    st.markdown("##### Price to Sales Ratio (P/S)")
+    st.markdown("**Interpretation**: P/S ratio compares a company's market value to its revenue, providing insight into the company's sales performance. A high P/S ratio suggests overvaluation, while a low P/S ratio indicates undervaluation.")
+    st.markdown("**Ideal Range**: The ideal P/S ratio varies by industry, but generally, lower values are preferred as they indicate undervaluation. However, it's essential to compare the P/S ratio with industry peers for a meaningful assessment.")
+
+    st.markdown("##### Dividend Yield")
+    st.markdown("**Interpretation**: Dividend Yield represents the percentage of dividends paid relative to the stock price. It indicates the return on investment from dividends and is crucial for income-seeking investors.")
+    st.markdown("**Ideal Range**: The ideal Dividend Yield varies by investor preference, but generally, higher values are preferred for income-seeking investors. However, it's essential to consider the company's dividend history and sustainability.")
+
+    st.markdown("##### Piotroski F-Score")
+    st.markdown("**Interpretation**: Piotroski F-Score evaluates a company's financial strength based on nine fundamental criteria. A high F-Score indicates a financially healthy company with strong operating performance.")
+    st.markdown("**Profitability Signals**: Positive net income, positive operating cash flow, operating cash flow > net income, ROA improvement.")
+    st.markdown("**Leverage Signals**: Decreased leverage, improved current ratio, no dilution of shares.")
+    st.markdown("**Operating Efficiency Signals**: Improved gross margin, improved asset turnover ratio.")
+    st.markdown("**Ideal Range**: An F-Score of 8 or 9 is considered good, indicating a financially robust company. Investors seeking fundamentally strong companies should look for higher F-Scores.")
+     
