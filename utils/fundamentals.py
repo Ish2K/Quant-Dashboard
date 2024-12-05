@@ -101,3 +101,7 @@ class Fundamentals:
             return self.calculate_piotroski_score_util()
         else:
             return None
+    
+    ############################################################################################################
+    # Add KNN model for predicting stock prices based on fundamentals
+    ############################################################################################################

@@ -91,3 +91,5 @@ if calc:
     fund = Fundamentals(stocks_list, analysis_type)
     data = fund.start_analysis()
     st.write(data)
+
+### ADD KNN MODEL NEXT
