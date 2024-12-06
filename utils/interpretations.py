@@ -111,4 +111,9 @@ def fundamentals_info():
     st.markdown("**Leverage Signals**: Decreased leverage, improved current ratio, no dilution of shares.")
     st.markdown("**Operating Efficiency Signals**: Improved gross margin, improved asset turnover ratio.")
     st.markdown("**Ideal Range**: An F-Score of 8 or 9 is considered good, indicating a financially robust company. Investors seeking fundamentally strong companies should look for higher F-Scores.")
+
+    st.markdown("##### K-Means Clustering")
+    st.markdown("**Interpretation**: K-Means Clustering groups stocks based on similar characteristics, such as financial ratios or performance metrics. It helps identify patterns and relationships among stocks, enabling investors to make informed decisions.")
+    st.markdown("**Ideal Range**: The ideal number of clusters depends on the dataset and the investor's objectives. Clusters should be distinct and meaningful, providing valuable insights for portfolio construction.")
+    st.markdown("**Formula**: K-Means Clustering assigns stocks to clusters based on minimizing the sum of squared differences between data points and cluster centroids. It iteratively optimizes cluster assignments to create homogeneous groups.")
      
