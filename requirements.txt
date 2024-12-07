@@ -125,10 +125,6 @@ python-dateutil==2.9.0.post0
 pytorch-lightning==1.9.5
 pytz==2024.2
 PyWavelets==1.7.0
-pywin32==308
-PyYAML==6.0.2
-pyzmq==26.2.0
-qdldl==0.1.7.post4
 QuantStats==0.0.64
 referencing==0.35.1
 requests==2.32.3
