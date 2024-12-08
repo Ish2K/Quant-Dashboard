@@ -1,7 +1,7 @@
-# Stock Analysis Dashboard
+# Quant-Dashboard
 
 ## Overview
-The **Stock Analysis Dashboard** is an interactive web-based application designed for analyzing stock fundamentals, clustering companies based on financial metrics, and visualizing data insights. This tool uses machine learning techniques to group stocks with similar financials and provides key financial ratios for fundamental analysis.
+The **Quant-Dashboard** is an interactive web-based application designed for analyzing stock fundamentals, clustering companies based on financial metrics, and visualizing data insights. This tool uses machine learning techniques to group stocks with similar financials and provides key financial ratios for fundamental analysis.
 
 Key features include:
 - **K-Means Clustering**: Group companies with similar financial metrics.
@@ -42,8 +42,8 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/stock-analysis-dashboard.git
-   cd stock-analysis-dashboard
+   git clone https://github.com/Ish2K/Quant-Dashboard.git
+   cd Quant-Dashboard
    ```
 
 2. **Set Up a Virtual Environment** (optional but recommended):
