@@ -96,6 +96,7 @@ class MetricsCalculator(PortfolioOptimizer):
         portfolioDailyReturns = np.array(self.portfolioReturnsDaily())
         benchmarkReturns = np.array(self.benchmark)
 
+        print(portfolioDailyReturns.shape, benchmarkReturns.shape)
         difference_array = portfolioDailyReturns - benchmarkReturns
         trackingError = difference_array.std(ddof=1) * np.sqrt(252)
 
