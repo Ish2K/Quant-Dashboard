@@ -7,7 +7,9 @@ Key features include:
 - **K-Means Clustering**: Group companies with similar financial metrics.
 - **Visualization**: Interactive visualizations using Plotly for PCA-based clustering.
 - **Fundamental Analysis**: Fetch and display key ratios like PE, PB, ROE, etc., using `yfinance`.
-- **Cluster Metrics**: Calculate and display metrics such as average price, median price, and tickers with the highest/lowest stock prices within each cluster.
+- **Cluster Metrics**: Calculate and display metrics such as average price, median price, and tickers with the highest/lowest stock
+prices within each cluster.
+- **Portofolio Analysis**: This app optimizes a stock portfolio using a range of optimization techniques to identify the most efficient allocation based on the selected criteria. Simply enter your stock tickers, choose a historical date range, and watch as the app analyzes performance and delivers tailored allocation recommendations to help you achieve your investment goals.
 
 ---
 
@@ -63,11 +65,11 @@ Before you begin, ensure you have the following installed:
 
 1. **Run the Script**:
    ```bash
-   python main.py
+   streamlit run ./Welcome.py
    ```
 
 2. **Enter Stock Tickers**:
-   - Input the stock tickers you want to analyze (e.g., AAPL, MSFT, GOOGL).
+   - Select the stock tickers you want to analyze (e.g., AAPL, MSFT, GOOGL).
 
 3. **Interact with the Dashboard**:
    - View fundamental ratios and clustering results.
@@ -104,6 +106,7 @@ Before you begin, ensure you have the following installed:
 ## Technologies Used
 - **Python**: Core programming language.
 - **Libraries**:
+  - `streamlit`: Providing UI Framework
   - `yfinance`: Fetching stock financial data.
   - `scikit-learn`: Clustering (K-Means) and dimensionality reduction (PCA).
   - `plotly`: Interactive visualizations.
