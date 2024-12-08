@@ -1,5 +1,3 @@
-Here’s a **`README.md`** file for your project that includes an overview, features, setup instructions, and usage details.
-
 ---
 
 # Stock Analysis Dashboard
