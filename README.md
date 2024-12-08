@@ -1,5 +1,3 @@
----
-
 # Stock Analysis Dashboard
 
 ## Overview
